@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head_title %}Tabla usuarios{% endblock %}
+
+{% block style_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Tabla usuarios</h2>
+
+<table class="table">
+    <thead>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario["first_name"] }}</td>
+                <td>{{ usuario["last_name"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
